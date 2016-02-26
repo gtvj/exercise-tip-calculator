@@ -8,11 +8,9 @@ var TipCalculator = function () {
   _createClass(TipCalculator, [{
     key: 'food_cost',
     set: function set(amount) {
-      console.log('setting ' + amount);
       this._food_cost = amount;
     },
     get: function get() {
-      console.log('getting food cost');
       return this._food_cost;
     }
   }]);
