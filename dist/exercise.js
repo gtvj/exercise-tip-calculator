@@ -21,6 +21,11 @@ var TipCalculator = function () {
     get: function get() {
       return this._percentage;
     }
+  }, {
+    key: 'tip_amount',
+    get: function get() {
+      return this.food_cost / 100 * this.percentage;
+    }
   }]);
 
   function TipCalculator(obj) {

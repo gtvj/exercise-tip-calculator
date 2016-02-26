@@ -18,6 +18,10 @@ class TipCalculator {
     return this._percentage;
   }
 
+  get tip_amount() {
+    return (this.food_cost / 100) * this.percentage;
+  }
+
   constructor(obj) {
     this.food_cost = obj.food_cost;
     this.percentage = obj.percentage;
