@@ -17,7 +17,7 @@ describe("A TipCalculator", function () {
   });
 
   it("should return the correct bill amount", function () {
-    expect(tc.bill_amount).toBe(48);
+    expect(tc.bill_amount).toEqual((48).toFixed(2));
   });
 
 });

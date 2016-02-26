@@ -6,30 +6,30 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var TipCalculator = function () {
   _createClass(TipCalculator, [{
-    key: 'food_cost',
+    key: "food_cost",
     set: function set(amount) {
-      this._food_cost = amount;
+      this._food_cost = parseFloat(amount);
     },
     get: function get() {
       return this._food_cost;
     }
   }, {
-    key: 'percentage',
+    key: "percentage",
     set: function set(int) {
-      this._percentage = int;
+      this._percentage = parseFloat(int);
     },
     get: function get() {
       return this._percentage;
     }
   }, {
-    key: 'tip_amount',
+    key: "tip_amount",
     get: function get() {
       return this.food_cost / 100 * this.percentage;
     }
   }, {
-    key: 'bill_amount',
+    key: "bill_amount",
     get: function get() {
-      return this.food_cost + this.tip_amount;
+      return (this.food_cost + this.tip_amount).toFixed(2);
     }
   }]);
 
@@ -42,4 +42,19 @@ var TipCalculator = function () {
 
   return TipCalculator;
 }();
+
+// Simple browser based UI for interactive testing
+
+
+(function () {
+
+  var params = {},
+      tc;
+  params.food_cost = prompt("What is the cost of food?");
+  params.percentage = prompt("What percentage tip would you like to apply?");
+
+  tc = new TipCalculator(params);
+
+  console.log(tc.bill_amount);
+})();
 //# sourceMappingURL=exercise.js.map

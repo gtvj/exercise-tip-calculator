@@ -3,7 +3,7 @@
 class TipCalculator {
 
   set food_cost(amount) {
-    this._food_cost = amount;
+    this._food_cost = parseFloat(amount);
   }
 
   get food_cost() {
@@ -11,7 +11,7 @@ class TipCalculator {
   }
 
   set percentage(int) {
-    this._percentage = int;
+    this._percentage = parseFloat(int);
   }
 
   get percentage() {
@@ -23,7 +23,7 @@ class TipCalculator {
   }
 
   get bill_amount() {
-    return this.food_cost + this.tip_amount;
+    return (this.food_cost + this.tip_amount).toFixed(2);
   }
 
   constructor(obj) {
@@ -31,3 +31,16 @@ class TipCalculator {
     this.percentage = obj.percentage;
   }
 }
+
+// Simple browser based UI for interactive testing
+(function () {
+
+  var params = {}, tc;
+  params.food_cost = prompt("What is the cost of food?");
+  params.percentage = prompt("What percentage tip would you like to apply?");
+
+  tc = new TipCalculator(params);
+
+  console.log(tc.bill_amount);
+
+})();
