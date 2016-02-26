@@ -13,12 +13,21 @@ var TipCalculator = function () {
     get: function get() {
       return this._food_cost;
     }
+  }, {
+    key: 'percentage',
+    set: function set(int) {
+      this._percentage = int;
+    },
+    get: function get() {
+      return this._percentage;
+    }
   }]);
 
   function TipCalculator(obj) {
     _classCallCheck(this, TipCalculator);
 
     this.food_cost = obj.food_cost;
+    this.percentage = obj.percentage;
   }
 
   return TipCalculator;
