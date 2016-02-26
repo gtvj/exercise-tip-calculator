@@ -14,6 +14,10 @@ describe("A TipCalculator", function () {
 
   it("should return the correct tip amount", function () {
     expect(tc.tip_amount).toBe(8);
-  })
+  });
+
+  it("should return the correct bill amount", function () {
+    expect(tc.bill_amount).toBe(48);
+  });
 
 });
