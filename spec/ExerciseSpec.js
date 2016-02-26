@@ -10,6 +10,6 @@ describe("A TipCalculator", function () {
 
   it("should have the percentage initialized correctly", function() {
     expect(tc.percentage).toBe(20);
-  })
+  });
 
 });
